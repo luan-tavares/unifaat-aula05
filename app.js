@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const promise01 = require('./controllers/promise-01');
 
 const app = express();
 const port = 8080;
@@ -36,6 +37,8 @@ app.get('/', (req, res) => {
         `);
     });
 });
+
+app.get('/promise', promise01);
 
 // Rota para servir os arquivos
 app.get('/:file', (req, res) => {
